@@ -1,0 +1,58 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>TicTacToe</title>
+		<link href="/xo/bs/css/bootstrap.min.css" rel="stylesheet">
+		<script src="/xo/xo.js"></script>
+	</head>
+	<body class="container text-center" onload="load();">
+		<h1 class="bg-primary" style="text-align: center">TicTacToe</h1>
+		<div class="well text-center" style="margin: 10%">
+			<div class="alert alert-dismissible alert-warning " id="warning" role="alert">
+				<button class="close" aria-label="Close" onclick="cls('warning');">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<div id="text-warning">&nbsp;</div>
+			</div>
+			<div class="alert alert-dismissible alert-danger" id="danger" role="alert">
+				<button class="close" aria-label="Close" onclick="cls('danger');">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<div id="text-danger">&nbsp;</div>
+			</div><div class="alert alert-dismissible alert-success" id="success" role="alert">
+				<button class="close" aria-label="Close" onclick="cls('success');">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<div id="text-success">&nbsp;</div>
+			</div>
+			<div class="row" style="margin-top: 1%; margin-bottom: 1%">
+				<button class="btn btn-default col-xs-offset-3 col-xs-2" id="b1" onclick="xo(1);">&nbsp;</button>
+				<button class="btn btn-default col-xs-2" id="b2" onclick="xo(2);">&nbsp;</button>
+				<button class="btn btn-default col-xs-2" id="b3" onclick="xo(3);">&nbsp;</button>
+			</div>
+			<div class="row" style="margin-top: 1%; margin-bottom: 1%">
+				<button class="btn btn-default col-xs-offset-3 col-xs-2" id="b4" onclick="xo(4);">&nbsp;</button>
+				<button class="btn btn-default col-xs-2" id="b5" onclick="xo(5);">&nbsp;</button>
+				<button class="btn btn-default col-xs-2" id="b6" onclick="xo(6);">&nbsp;</button>
+			</div>
+			<div class="row" style="margin-top: 1%; margin-bottom: 1%">
+				<button class="btn btn-default col-xs-offset-3 col-xs-2" id="b7" onclick="xo(7);">&nbsp;</button>
+				<button class="btn btn-default col-xs-2" id="b8" onclick="xo(8);">&nbsp;</button>
+				<button class="btn btn-default col-xs-2" id="b9" onclick="xo(9);">&nbsp;</button>
+			</div>
+			<div class="row">
+				<button class="btn btn-default col-xs-offset-3 col-xs-6" style="margin-top: 1%; margin-bottom: 1%" id="reset" onclick="resetXo();">Start</button>
+			</div>
+			<div class="row">
+				<button class="btn btn-default col-xs-offset-3 col-xs-6" style="margin-top: 1%; margin-bottom: 1%" id="confirm" onclick="confirmMove();">Confirm</button>
+			</div>
+		</div>
+		<div class="text-success">
+			Follow on <a href="https://twitter.com/jaiselrahman">Twitter</a>
+			<br/>
+			Source code at <a href="https://github.com/jaiselrahman/xo">Github</a>
+		</div>
+		<script src="/xo/bs/js/jquery.js"></script>
+		<script src="/xo/bs/js/bootstrap.min.js"></script>
+	</body>
+</html>
