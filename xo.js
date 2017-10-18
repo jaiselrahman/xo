@@ -4,19 +4,18 @@ const NONE = '&nbsp;';
 var isPlaying = false;
 var reset;
 var position;
-var w, d, s;
 
 function resetXo() {
-	w.hide();
-	d.hide();
-	s.hide();
+	cls('warning');
+	cls('danger');
+	cls('success');
 	if(reset.innerHTML == 'Start') {
 		isPlaying = true;
 		reset.innerHTML = 'Reset'
 		if (Math.round(Math.random()) == 0 ) {
-			showStatus('You goes first', 'warning');
+			showStatus('You goes first');
 		} else {
-			showStatus('Computer goes first', 'warning');
+			showStatus('Computer goes first');
 			playComp();
 		}
 	} else {
@@ -37,12 +36,6 @@ function load() {
 		b[i] = document.getElementById('b'+i);
 	}
 	reset = document.getElementById('reset');
-	w = $('#warning');
-	d = $('#danger');
-	s = $('#success');
-	w.hide();
-	d.hide();
-	s.hide();
 }
 
 function xo(pos) {
@@ -94,7 +87,7 @@ function getRandomMove(m) {
 
 function confirmMove () {
 	if (isPlaying) {
-		w.hide();
+		cls('warning');
 		if(position != 0) {
 			move(position, player);
 			position=0;
@@ -173,10 +166,11 @@ function isWinner(b, c) {
 }
 
 function  cls(s) {
-	$('#'+s).hide();
+	document.getElementById(s).classList.remove('show');
 }
 
 function showStatus(text, type = 'warning') {
-	$('#text-'+type).text(text);
-	$('#'+type).show();
+	s = document.getElementById(type);
+	s.classList.add('show');
+	s.textContent = text;
 }
